@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Report 2025 - H&M vs SHEIN</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
+
+    <style>
+        /* 基础设置 */
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #F2F0E9;
+            color: #1A4D2E;
+        }
+        
+        /* 简单的淡入动画 */
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* 隐藏滚动条但允许滚动 */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* 折叠面板样式优化 */
+        details > summary { list-style: none; cursor: pointer; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: slideDown 0.3s ease-in-out; }
+        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-[#F2F0E9] min-h-screen selection:bg-[#FF2E00] selection:text-white">
+
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#F2F0E9] border-b-4 border-[#1A4D2E] shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-lg font-mono font-bold text-[#1A4D2E] uppercase flex items-center gap-2 cursor-pointer" onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})">
+                <div class="w-3 h-3 bg-[#FF2E00] rounded-full animate-pulse"></div>
+                Thesis Report 2025
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-widest text-[#1A4D2E]">
+                <a href="#context" class="hover:text-[#FF2E00] transition-colors">Context</a>
+                <a href="#analysis" class="hover:text-[#FF2E00] transition-colors">Data Explorer</a>
+                <a href="#reflection" class="hover:text-[#FF2E00] transition-colors">Reflections</a>
+                <a href="#ai" class="hover:text-[#FF2E00] transition-colors">Disclosure</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="hero" class="min-h-screen pt-24 px-4 flex flex-col justify-center">
+        <div class="container mx-auto grid lg:grid-cols-12 gap-8 items-center h-full">
+            <div class="lg:col-span-5 relative flex flex-col gap-4 fade-in">
+                <div class="relative group transform lg:-rotate-1 hover:rotate-0 transition-transform duration-500 z-10">
+                    <img src="https://thevou.com/wp-content/uploads/2021/04/Fast-Fashion-The-VOU-Feature.jpg" alt="Hero 1" class="w-full h-auto border-4 border-[#1A4D2E] grayscale group-hover:grayscale-0 transition-all shadow-lg">
+                    <div class="absolute top-4 left-4 bg-[#FF2E00] text-white px-2 py-1 text-xs font-mono font-bold">FIG 01.</div>
+                </div>
+                <div class="relative group w-3/4 self-end transform lg:rotate-2 hover:rotate-0 transition-transform duration-500 z-20 -mt-12">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBlSmvAXkTAASRXgK-HGZioM14t-MkBqGwSg&s" alt="Hero 2" class="w-full h-auto border-4 border-[#1A4D2E] grayscale group-hover:grayscale-0 transition-all shadow-lg">
+                    <div class="absolute bottom-4 right-4 bg-[#1A4D2E] text-white px-2 py-1 text-xs font-mono font-bold">FIG 02.</div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 pl-0 lg:pl-12 fade-in" style="animation-delay: 0.2s;">
+                <div class="mb-12 border-l-8 border-[#FF2E00] pl-8">
+                    <h1 class="text-5xl md:text-8xl font-black text-[#1A4D2E] leading-[0.9] tracking-tighter uppercase mb-6">
+                        Identity<br>Construction<span class="text-[#FF2E00]">.</span>
+                    </h1>
+                    <p class="font-mono text-gray-600 max-w-md">
+                        A Comparative Critical Discourse Analysis of H&M and SHEIN within Global Capitalism.
+                    </p>
+                    <p class="font-mono text-xs text-[#1A4D2E] mt-2 font-bold uppercase">By Dengjianing Li</p>
+                </div>
+
+                <div class="flex flex-col border-t border-[#1A4D2E]/20">
+                    <a href="#context" class="group flex items-baseline w-full text-left py-4 border-b border-[#1A4D2E]/20 hover:bg-[#1A4D2E] hover:text-[#F2F0E9] transition-all px-4">
+                        <span class="font-mono text-sm mr-6 group-hover:text-[#FF2E00]">01</span>
+                        <span class="text-2xl font-black uppercase tracking-tighter flex-grow">Context</span>
+                        <i data-lucide="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:-rotate-45"></i>
+                    </a>
+                    <a href="#analysis" class="group flex items-baseline w-full text-left py-4 border-b border-[#1A4D2E]/20 hover:bg-[#1A4D2E] hover:text-[#F2F0E9] transition-all px-4">
+                        <span class="font-mono text-sm mr-6 group-hover:text-[#FF2E00]">02</span>
+                        <span class="text-2xl font-black uppercase tracking-tighter flex-grow">Data Explorer</span>
+                        <i data-lucide="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:-rotate-45"></i>
+                    </a>
+                    <a href="#reflection" class="group flex items-baseline w-full text-left py-4 border-b border-[#1A4D2E]/20 hover:bg-[#1A4D2E] hover:text-[#F2F0E9] transition-all px-4">
+                        <span class="font-mono text-sm mr-6 group-hover:text-[#FF2E00]">03</span>
+                        <span class="text-2xl font-black uppercase tracking-tighter flex-grow">Reflections</span>
+                        <i data-lucide="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:-rotate-45"></i>
+                    </a>
+                    <a href="#ai" class="group flex items-baseline w-full text-left py-4 border-b border-[#1A4D2E]/20 hover:bg-[#1A4D2E] hover:text-[#F2F0E9] transition-all px-4">
+                        <span class="font-mono text-sm mr-6 group-hover:text-[#FF2E00]">04</span>
+                        <span class="text-2xl font-black uppercase tracking-tighter flex-grow">Disclosure</span>
+                        <i data-lucide="arrow-right" class="opacity-0 group-hover:opacity-100 transition-opacity transform group-hover:-rotate-45"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="context" class="py-24 bg-[#1A4D2E] text-[#F2F0E9] px-4">
+        <div class="container mx-auto max-w-5xl">
+            <div class="mb-12 flex items-center gap-4 opacity-70">
+                <i data-lucide="book-open" class="text-[#FF2E00]"></i>
+                <span class="font-mono text-sm tracking-widest uppercase">Research Context</span>
+            </div>
+
+            <div class="mb-12 relative h-48 border-4 border-[#F2F0E9] overflow-hidden opacity-80">
+                <img src="https://d3.harvard.edu/platform-rctom/wp-content/uploads/sites/4/2016/11/puzzle1-1-418x200.jpg" class="w-full h-full object-cover grayscale">
+                <div class="absolute bottom-2 right-2 bg-[#FF2E00] text-white px-2 py-1 text-xs font-mono font-bold">FIG 03.</div>
+            </div>
+
+            <details class="border-b-2 border-[#F2F0E9]/20 mb-4 bg-white/5 group">
+                <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-white/10 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <i data-lucide="search" class="text-[#FF2E00]"></i>
+                        <h3 class="text-xl font-black uppercase text-[#F2F0E9]">Research Question</h3>
+                    </div>
+                    <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="p-6 border-t border-dashed border-[#F2F0E9]/30">
+                    <div class="border-l-4 border-[#FF2E00] pl-6 py-2">
+                        <h2 class="text-2xl md:text-3xl font-black leading-tight">
+                            "How do H&M and SHEIN use language in their sustainability reports to construct different forms of sustainable identity within global capitalism?"
+                        </h2>
+                    </div>
+                </div>
+            </details>
+
+            <details class="border-b-2 border-[#F2F0E9]/20 mb-4 bg-white/5 group">
+                <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-white/10 transition-colors">
+                    <div class="flex items-center gap-4">
+                        <i data-lucide="layers" class="text-[#FF2E00]"></i>
+                        <h3 class="text-xl font-black uppercase text-[#F2F0E9]">Literature Review</h3>
+                    </div>
+                    <i data-lucide="chevron-down" class="group-open:rotate-180 transition-transform"></i>
+                </summary>
+                <div class="p-6 border-t border-dashed border-[#F2F0E9]/30 grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-black uppercase mb-4 text-[#FF2E00]">Theoretical Framework</h4>
+                        <ul class="space-y-4 text-sm font-medium opacity-90">
+                            <li class="flex gap-2"><i data-lucide="target" size="16"></i> "Fast fashion relies on harmful production." (Bick 2018)</li>
+                            <li class="flex gap-2"><i data-lucide="zap" size="16"></i> "Sustainability is often greenwashing." (Delmas 2011)</li>
+                            <li class="flex gap-2"><i data-lucide="file-text" size="16"></i> "Reports are rhetorical tools." (Cho 2015)</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#F2F0E9] text-[#1A4D2E] p-6 border-l-8 border-[#FF2E00]">
+                        <h4 class="font-black uppercase mb-2 text-[#FF2E00]">Research Gap</h4>
+                        <p class="text-sm font-bold">"Few studies compare traditional (H&M) vs digital-native (SHEIN) companies."</p>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="analysis" class="py-24 px-4 bg-[#F2F0E9] min-h-screen">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <span class="bg-[#1A4D2E] text-white px-3 py-1 font-mono text-xs mb-4 inline-block uppercase">Corpus Data</span>
+                <h2 class="text-5xl md:text-7xl font-black text-[#1A4D2E] uppercase tracking-tighter">Data Explorer</h2>
+                <p class="font-mono text-gray-500 mt-2">Quantitative Corpus Analysis (2022-2024)</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+                <button onclick="switchBrand('hm')" id="btn-hm" class="p-6 text-left border-t-8 transition-all bg-white shadow-xl border-[#1A4D2E]">
+                    <h3 class="text-3xl font-black text-[#1A4D2E] uppercase">H&M</h3>
+                    <p class="text-xs font-mono text-gray-500 mt-1">The Regulator</p>
+                </button>
+                <button onclick="switchBrand('shein')" id="btn-shein" class="p-6 text-left border-t-8 transition-all bg-[#FF2E00]/5 border-transparent opacity-60 hover:opacity-100">
+                    <h3 class="text-3xl font-black text-[#FF2E00] uppercase">SHEIN</h3>
+                    <p class="text-xs font-mono text-gray-500 mt-1">The Platform</p>
+                </button>
+            </div>
+
+            <div id="data-panel" class="bg-white p-8 md:p-12 shadow-2xl border-l-8 transition-colors duration-500" style="border-color: #1A4D2E;">
+                
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                    <div>
+                        <h4 class="text-sm font-bold uppercase opacity-40 mb-2">Year Selection</h4>
+                        <div class="flex gap-2">
+                            <button onclick="switchYear('2022')" id="year-2022" class="year-btn px-4 py-2 font-black text-xl border-b-4 transition-all opacity-100 border-current">2022</button>
+                            <button onclick="switchYear('2023')" id="year-2023" class="year-btn px-4 py-2 font-black text-xl border-b-4 transition-all opacity-30 border-transparent hover:opacity-60">2023</button>
+                            <button onclick="switchYear('2024')" id="year-2024" class="year-btn px-4 py-2 font-black text-xl border-b-4 transition-all opacity-30 border-transparent hover:opacity-60">2024</button>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-xs font-mono uppercase opacity-50">Core Theme</span>
+                        <span id="theme-text" class="text-2xl font-black uppercase transition-colors duration-300 text-[#1A4D2E]">Systemic Compliance</span>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-12" id="charts-container">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reflection" class="py-24 px-4 bg-white text-[#1A4D2E]">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-16">
+                <span class="bg-[#FF2E00] text-white px-3 py-1 font-mono text-xs mb-4 inline-block uppercase">Critical Analysis</span>
+                <h2 class="text-5xl md:text-6xl font-black uppercase tracking-tighter">Analytical Logic & <br>Reflections</h2>
+            </div>
+
+            <div class="mb-12 grid md:grid-cols-3 gap-0">
+                <div class="p-6 border border-[#1A4D2E]/20 bg-[#F2F0E9] relative">
+                    <div class="absolute top-4 right-4 text-[#1A4D2E] opacity-20 text-4xl font-black">01</div>
+                    <div class="font-bold text-lg mb-2 uppercase text-[#1A4D2E]">Data</div>
+                    <p class="text-sm opacity-80">Python frequency analysis revealed distinct vocabulary: Compliance vs. Empowerment.</p>
+                </div>
+                <div class="p-6 border border-[#1A4D2E]/20 bg-[#F2F0E9] relative border-l-0">
+                    <div class="absolute top-4 right-4 text-[#1A4D2E] opacity-20 text-4xl font-black">02</div>
+                    <div class="font-bold text-lg mb-2 uppercase text-[#1A4D2E]">Discourse</div>
+                    <p class="text-sm opacity-80">CDA interpreted these choices as "Industrial" vs. "Platform" logic.</p>
+                </div>
+                <div class="p-6 border border-[#1A4D2E]/20 bg-[#F2F0E9] relative border-l-0">
+                    <div class="absolute top-4 right-4 text-[#1A4D2E] opacity-20 text-4xl font-black">03</div>
+                    <div class="font-bold text-lg mb-2 uppercase text-[#1A4D2E]">Synthesis</div>
+                    <p class="text-sm opacity-80">Different moral identities constructed to secure legitimacy.</p>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <details class="group border-l-4 border-[#1A4D2E] bg-[#F2F0E9] hover:bg-white transition-colors">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 rounded-full bg-[#1A4D2E] text-white shadow-sm"><i data-lucide="database" size="20"></i></div>
+                            <div>
+                                <h4 class="text-xl font-black uppercase text-[#1A4D2E]">Word Choice: System vs. Connection</h4>
+                                <p class="text-xs font-mono opacity-60 mt-1 uppercase tracking-wider">Click to Compare</p>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="opacity-50 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-6 pb-8 pt-2 grid md:grid-cols-2 gap-8 text-sm border-t border-gray-100">
+                        <div class="bg-gray-50 p-4 rounded mt-4">
+                            <p class="font-bold uppercase text-[#1A4D2E] mb-2">H&M: The Machine</p>
+                            <p class="mb-2 text-xs font-mono uppercase text-gray-500">Focus: "Board", "Audit", "Financial"</p>
+                            <p class="opacity-80">H&M positions itself as a complex machine requiring oversight. Bureaucratic and detached.</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded mt-4">
+                            <p class="font-bold uppercase text-[#FF2E00] mb-2">SHEIN: The Network</p>
+                            <p class="mb-2 text-xs font-mono uppercase text-gray-500">Focus: "Social", "Support", "Enable"</p>
+                            <p class="opacity-80">SHEIN shifts focus to "people". Relational terms flatten the hierarchy.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group border-l-4 border-[#FF8C00] bg-[#F2F0E9] hover:bg-white transition-colors">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 rounded-full bg-[#FF8C00] text-white shadow-sm"><i data-lucide="mouse-pointer" size="20"></i></div>
+                            <div>
+                                <h4 class="text-xl font-black uppercase text-[#1A4D2E]">Style: Passive vs. Active</h4>
+                                <p class="text-xs font-mono opacity-60 mt-1 uppercase tracking-wider">Click to Compare</p>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="opacity-50 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-6 pb-8 pt-2 grid md:grid-cols-2 gap-8 text-sm border-t border-gray-100">
+                        <div class="bg-gray-50 p-4 rounded mt-4">
+                            <p class="font-bold uppercase text-[#1A4D2E] mb-2">H&M: Passive Voice</p>
+                            <p class="italic mb-2 text-lg font-serif">"Audits were conducted..."</p>
+                            <p class="opacity-80">Creates an impression of objectivity. The "System" is watching.</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded mt-4">
+                            <p class="font-bold uppercase text-[#FF2E00] mb-2">SHEIN: Active Voice</p>
+                            <p class="italic mb-2 text-lg font-serif">"We launched...", "We empower..."</p>
+                            <p class="opacity-80">Dynamic verbs mimic tech-startup language. Speed and agency.</p>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group border-l-4 border-[#FF2E00] bg-[#F2F0E9] hover:bg-white transition-colors">
+                    <summary class="flex items-center justify-between p-6 cursor-pointer list-none">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 rounded-full bg-[#FF2E00] text-white shadow-sm"><i data-lucide="clock" size="20"></i></div>
+                            <div>
+                                <h4 class="text-xl font-black uppercase text-[#1A4D2E]">Temporal Logic: Linear vs. Instant</h4>
+                                <p class="text-xs font-mono opacity-60 mt-1 uppercase tracking-wider">Click to Compare</p>
+                            </div>
+                        </div>
+                        <i data-lucide="chevron-down" class="opacity-50 group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    <div class="px-6 pb-8 pt-2 grid md:grid-cols-2 gap-8 text-sm border-t border-gray-100">
+                        <div class="bg-gray-50 p-4 rounded mt-4">
+                            <p class="font-bold uppercase text-[#1A4D2E] mb-2">H&M: Industrial Time</p>
+                            <p class="mb-2 text-xs font-mono uppercase text-gray-500">"Roadmap 2030", "Long-term"</p>
+                            <p class="opacity-80">Asks for patience. Justifies current pollution by promising a better future. A linear journey.</p>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded mt-4">
+                            <p class="font-bold uppercase text-[#FF2E00] mb-2">SHEIN: Digital Time</p>
+                            <p class="mb-2 text-xs font-mono uppercase text-gray-500">"On-demand", "Now", "Rapid"</p>
+                            <p class="opacity-80">Matches "instant gratification". Sustainability is framed as an instant feature, not a long wait.</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            
+            <div class="mt-12 p-10 bg-[#1A4D2E] text-[#F2F0E9] text-center border-4 border-double border-[#F2F0E9] shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-2 bg-[#FF2E00]"></div>
+                <div class="flex justify-center mb-6"><i data-lucide="corner-right-down" class="text-[#FF2E00]" size="40"></i></div>
+                <h3 class="text-3xl font-black uppercase mb-6 tracking-widest">Final Verdict</h3>
+                <p class="text-xl font-serif italic max-w-3xl mx-auto leading-relaxed">
+                    "Corporate 'conscience' is not an inherent quality but a strategically constructed image. We are moving from an era of Institutional Control (H&M) to one of Platform Empowerment (SHEIN)."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai" class="bg-[#1A4D2E] text-[#F2F0E9] py-16 px-4 border-t-8 border-[#FF2E00]">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-2xl font-black uppercase mb-8 flex items-center justify-center gap-3">
+                <i data-lucide="bot" class="text-[#FF2E00]"></i> AI Usage Disclosure
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 text-sm opacity-80 leading-relaxed text-left">
+                <div><span class="font-bold text-[#FF2E00] block mb-2 text-lg">01. Data</span>Python scripts (AI-assisted) used for tokenization.</div>
+                <div><span class="font-bold text-[#FF2E00] block mb-2 text-lg">02. Literature</span>AI tools assisted in summarizing texts.</div>
+                <div><span class="font-bold text-[#FF2E00] block mb-2 text-lg">03. Code</span>This presentation was developed with Generative AI.</div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-[#F2F0E9]/10 text-center flex flex-col items-center gap-4">
+                <button onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})" class="flex items-center gap-2 font-bold uppercase hover:text-[#FF2E00] transition-colors cursor-pointer text-[#F2F0E9]">
+                    <i data-lucide="arrow-up" size="16"></i> Back to Top
+                </button>
+                <p class="text-xs font-mono opacity-40 text-[#F2F0E9]">
+                    Research by Dengjianing Li<br>
+                    Limitation: Interpretative analysis of text (2022-2024), not a physical audit.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // 1. 初始化图标
+        lucide.createIcons();
+
+        // 2. 数据源
+        const dataCenter = {
+            hm: {
+                color: "#1A4D2E",
+                years: {
+                    '2022': {
+                        focus: "Systemic Compliance",
+                        tokens: [{l:"Board",c:348},{l:"Sustainability",c:274},{l:"Financial",c:271},{l:"Business",c:269},{l:"Annual",c:214}],
+                        bigrams: [{l:"Supply Chain",c:152},{l:"Hennes Mauritz",c:115},{l:"Demand Driven",c:86},{l:"Driven Supply",c:82}],
+                        cats: {Environment:0.62,Labor:0.44,Community:0.19,Innovation:0.31,Risk:0.68,Branding:0.36}
+                    },
+                    '2023': {
+                        focus: "Continuity & Finance",
+                        tokens: [{l:"Board",c:358},{l:"Financial",c:288},{l:"Business",c:246},{l:"Sustainability",c:223},{l:"Annual",c:210}],
+                        bigrams: [{l:"Supply Chain",c:161},{l:"Hennes Mauritz",c:114},{l:"Demand Driven",c:82},{l:"Board Directors",c:79}],
+                        cats: {Environment:0.60,Labor:0.37,Community:0.18,Innovation:0.19,Risk:0.62,Branding:0.35}
+                    },
+                    '2024': {
+                        focus: "Value & Chain",
+                        tokens: [{l:"Board",c:387},{l:"Financial",c:381},{l:"Business",c:375},{l:"Value",c:298},{l:"Chain",c:275}],
+                        bigrams: [{l:"Board Directors",c:248},{l:"Value Chain",c:150},{l:"Supply Chain",c:123},{l:"Human Rights",c:119}],
+                        cats: {Environment:0.96,Labor:0.61,Community:0.21,Innovation:0.25,Risk:0.62,Branding:0.47}
+                    }
+                }
+            },
+            shein: {
+                color: "#FF2E00",
+                years: {
+                    '2022': {
+                        focus: "Impact & Production",
+                        tokens: [{l:"Sustainability",c:106},{l:"Impact",c:96},{l:"Waste",c:93},{l:"Social",c:87},{l:"Suppliers",c:76}],
+                        bigrams: [{l:"Sustainability Social",c:66},{l:"Social Impact",c:66},{l:"Waste Less",c:46},{l:"Equitable",c:43}],
+                        cats: {Environment:1.47,Labor:1.06,Community:0.63,Innovation:0.87,Risk:0.65,Branding:1.29}
+                    },
+                    '2023': {
+                        focus: "Emerging Empowerment",
+                        tokens: [{l:"Suppliers",c:134},{l:"Sustainability",c:120},{l:"Impact",c:119},{l:"Social",c:107},{l:"Chain",c:94}],
+                        bigrams: [{l:"Social Impact",c:86},{l:"Sustainability Social",c:82},{l:"Supply Chain",c:74},{l:"Governance",c:56}],
+                        cats: {Environment:1.29,Labor:1.52,Community:0.60,Innovation:0.83,Risk:0.61,Branding:1.09}
+                    },
+                    '2024': {
+                        focus: "Platform Ecosystem",
+                        tokens: [{l:"Impact",c:270},{l:"Sustainability",c:242},{l:"People",c:223},{l:"Suppliers",c:210},{l:"Social",c:200}],
+                        bigrams: [{l:"Social Impact",c:153},{l:"Sustainability Social",c:148},{l:"Governance Annex",c:105},{l:"Process",c:100}],
+                        cats: {Environment:1.45,Labor:1.18,Community:0.59,Innovation:0.52,Risk:0.72,Branding:1.08}
+                    }
+                }
+            }
+        };
+
+        // 3. 状态管理
+        let currentBrand = 'hm';
+        let currentYear = '2022';
+
+        function switchBrand(brand) {
+            currentBrand = brand;
+            const hmBtn = document.getElementById('btn-hm');
+            const sheinBtn = document.getElementById('btn-shein');
+            
+            if (brand === 'hm') {
+                hmBtn.className = "p-6 text-left border-t-8 transition-all bg-white shadow-xl border-[#1A4D2E]";
+                sheinBtn.className = "p-6 text-left border-t-8 transition-all bg-[#FF2E00]/5 border-transparent opacity-60 hover:opacity-100";
+            } else {
+                hmBtn.className = "p-6 text-left border-t-8 transition-all bg-[#1A4D2E]/5 border-transparent opacity-60 hover:opacity-100";
+                sheinBtn.className = "p-6 text-left border-t-8 transition-all bg-white shadow-xl border-[#FF2E00]";
+            }
+            document.getElementById('data-panel').style.borderColor = dataCenter[brand].color;
+            document.querySelectorAll('.year-btn').forEach(btn => {
+                if(btn.classList.contains('opacity-100')) btn.style.color = dataCenter[brand].color;
+            });
+            renderCharts();
+        }
+
+        function switchYear(year) {
+            currentYear = year;
+            const themeColor = dataCenter[currentBrand].color;
+            document.querySelectorAll('.year-btn').forEach(btn => {
+                if (btn.id === `year-${year}`) {
+                    btn.classList.remove('opacity-30', 'border-transparent');
+                    btn.classList.add('opacity-100', 'border-current');
+                    btn.style.color = themeColor;
+                } else {
+                    btn.classList.add('opacity-30', 'border-transparent');
+                    btn.classList.remove('opacity-100', 'border-current');
+                    btn.style.color = '#000';
+                }
+            });
+            renderCharts();
+        }
+
+        function renderCharts() {
+            const data = dataCenter[currentBrand].years[currentYear];
+            const color = dataCenter[currentBrand].color;
+            const container = document.getElementById('charts-container');
+            const themeText = document.getElementById('theme-text');
+
+            themeText.innerText = data.focus;
+            themeText.style.color = color;
+
+            let tokenHTML = `<div><div class="flex items-center gap-2 mb-6" style="color:${color}"><i data-lucide="database" size="20"></i><h5 class="font-bold uppercase">Top 5 Tokens</h5></div>`;
+            data.tokens.forEach(t => {
+                tokenHTML += `<div class="mb-3"><div class="flex justify-between items-end mb-1"><span class="font-bold text-xs uppercase">${t.l}</span><span class="font-mono text-[10px] opacity-60">${t.c}</span></div><div class="w-full bg-gray-100 h-2 rounded-sm overflow-hidden"><div class="h-full transition-all duration-1000" style="width:${(t.c/400)*100}%; background-color:${color}"></div></div></div>`;
+            });
+            tokenHTML += `</div>`;
+
+            let bigramHTML = `<div><div class="flex items-center gap-2 mb-6" style="color:${color}"><i data-lucide="layers" size="20"></i><h5 class="font-bold uppercase">Top 5 Bigrams</h5></div>`;
+            data.bigrams.forEach(t => {
+                bigramHTML += `<div class="mb-3"><div class="flex justify-between items-end mb-1"><span class="font-bold text-xs uppercase">${t.l}</span><span class="font-mono text-[10px] opacity-60">${t.c}</span></div><div class="w-full bg-gray-100 h-2 rounded-sm overflow-hidden"><div class="h-full transition-all duration-1000" style="width:${(t.c/200)*100}%; background-color:${color}"></div></div></div>`;
+            });
+            bigramHTML += `</div>`;
+
+            let catHTML = `<div><div class="flex items-center gap-2 mb-6" style="color:${color}"><i data-lucide="layout-grid" size="20"></i><h5 class="font-bold uppercase">Category Focus</h5></div><div class="space-y-4 text-sm">`;
+            for (const [key, val] of Object.entries(data.cats)) {
+                catHTML += `<div class="flex items-center gap-2"><span class="w-24 font-mono uppercase text-xs opacity-60">${key}</span><div class="flex-grow h-2 bg-gray-100 rounded-full overflow-hidden"><div class="h-full" style="width:${Math.min(val*100*40, 100)}%; background-color:${color}"></div></div><span class="text-xs font-bold">${val.toFixed(2)}%</span></div>`;
+            }
+            catHTML += `</div></div>`;
+
+            container.innerHTML = tokenHTML + bigramHTML + catHTML;
+            lucide.createIcons();
+        }
+
+        renderCharts();
+        switchBrand('hm');
+    </script>
+</body>
+</html>
